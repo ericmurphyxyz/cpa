@@ -4,7 +4,7 @@ mkdir $1
 cd $1
 
 npm init -y
-npm i react react-dom
+npm i parcel react react-dom
 
 # Add starter files
 echo '<!DOCTYPE html>
@@ -16,16 +16,16 @@ echo '<!DOCTYPE html>
   </head>
   <body>
     <div id="root"></div>
-    <script src="src/index.js"></script>
+    <script src="src/index.js" type="module"></script>
   </body>
 </html>' >> index.html
 
 mkdir src
 echo 'import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));' >> src/index.js
+createRoot(document.getElementById("root")).render(<App />);' >> src/index.js
 echo 'import React from "react";
 
 const App = () => <div>Hello world.</div>;

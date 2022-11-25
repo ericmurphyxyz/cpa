@@ -25,3 +25,15 @@ You can call the script by adding it as an alias in your shell config file. (e.g
 ```zsh
 alias cpa="~/path/to/cpa"
 ```
+## Files after first run
+
+```
+|-- index.html
+|-- node_modules
+|   `-- ...
+|-- package.json
+|-- package-lock.json
+`-- src
+    |-- App.js
+    `-- index.js
+```
